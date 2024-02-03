@@ -4,10 +4,13 @@ pipeline {
             label 'agent-test'
         }
     }
-    
+    environment {
+        USER_NAME = "venky"
+    }
     stages {
         stage("build"){
             steps{
+                echo "user name ${USER_NAME}"
                 echo "build trigger automatically code pushed "
             }
         }
