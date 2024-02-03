@@ -4,6 +4,10 @@ pipeline {
             label 'agent-test'
         }
     }
+     parameters {
+         string(name: "TEST_STRING", defaultValue: "ssbostan", trim: true, description: "Sample string parameter")
+       
+    }
     environment {
         USER_NAME = "venky"
     }
@@ -16,6 +20,8 @@ pipeline {
             steps{
                 echo "user name ${USER_NAME}"
                 echo "build trigger automatically code pushed "
+                echo "Checking paramteers $params.TEST_STRING"
+
             }
         }
         stage("Teting_something"){
