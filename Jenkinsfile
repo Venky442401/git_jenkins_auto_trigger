@@ -14,6 +14,7 @@ pipeline {
         stage("Teting_something"){
             steps{
                 echo "Testing is running"
+                echo "Testing is after push"
             }
         }
     }
